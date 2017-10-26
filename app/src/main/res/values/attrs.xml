@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+  <declare-styleable name="SubmitView">
+    <attr name="textSize" format="integer"/>
+    <attr name="textColor" format="color"/>
+    <attr name="text" format="string"/>
+    <attr name="backgroundColor" format="color"/>
+    <attr name="tickColor" format="color"/>
+  </declare-styleable>
+</resources>

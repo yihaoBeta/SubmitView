@@ -12,6 +12,7 @@
   <com.zxs.yihaobeta.submitview.view.SubmitView
 
       android:id="@+id/submitView"
+      android:padding="10dp"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       />
