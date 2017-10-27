@@ -1,10 +1,30 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <resources>
+
+  <attr format="integer" name="textSize"/>
+  <attr format="string" name="text"/>
+  <attr format="color" name="textColor"/>
+  <attr format="color" name="backgroundColor"/>
+
   <declare-styleable name="SubmitView">
-    <attr name="textSize" format="integer"/>
-    <attr name="textColor" format="color"/>
-    <attr name="text" format="string"/>
-    <attr name="backgroundColor" format="color"/>
-    <attr name="tickColor" format="color"/>
+    <attr name="textSize"/>
+    <attr name="textColor"/>
+    <attr name="text"/>
+    <attr name="backgroundColor"/>
+    <attr format="color" name="tickColor"/>
+  </declare-styleable>
+
+  <declare-styleable name="SubmitWithProgressView">
+    <attr name="textSize"/>
+    <attr name="text"/>
+    <attr name="textColor"/>
+    <attr name="backgroundColor"/>
+    <attr format="color" name="progressColor"/>
+    <attr format="string" name="completeText"/>
+    <attr format="float" name="progressbarHeight"/>
+    <attr format="integer" name="maxProgressValue"/>
+    <attr format="color" name="circleColor"/>
+    <attr format="integer" name="completeTextSize"/>
+    <attr format="color" name="completeTextColor"/>
   </declare-styleable>
 </resources>

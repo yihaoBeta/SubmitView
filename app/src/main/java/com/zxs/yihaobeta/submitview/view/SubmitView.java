@@ -52,8 +52,8 @@ public class SubmitView extends View {
   private Paint mTickPaint;
   private int mTickColor;
   //收缩动画
-  private ValueAnimator mShrinkAnim;
-  private long mShrinkAnimDuration = 500;
+  private ValueAnimator mPinchAnim;
+  private long mPinchAnimDuration = 500;
   //当前的状态
   private Status mStatus = Status.NORMAL;
   //收缩动画过程中的view长度值
@@ -231,10 +231,10 @@ public class SubmitView extends View {
    * 初始化动画
    */
   private void initAnim() {
-    mShrinkAnim = ValueAnimator.ofFloat(0, 1);
-    mShrinkAnim.setDuration(mShrinkAnimDuration);
-    mShrinkAnim.setInterpolator(new AccelerateInterpolator());
-    mShrinkAnim.addListener(new AnimatorListenerAdapter() {
+    mPinchAnim = ValueAnimator.ofFloat(0, 1);
+    mPinchAnim.setDuration(mPinchAnimDuration);
+    mPinchAnim.setInterpolator(new AccelerateInterpolator());
+    mPinchAnim.addListener(new AnimatorListenerAdapter() {
       @Override
       public void onAnimationStart(Animator animation) {
         //动画开始前的初始view宽度为整个view的宽度
@@ -248,13 +248,13 @@ public class SubmitView extends View {
         mPrepareRotateAnim.start();
       }
     });
-    mShrinkAnim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+    mPinchAnim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
       @Override
       public void onAnimationUpdate(ValueAnimator animation) {
         mCurViewLengthInAnim = mViewRect.width() * (1 - animation.getAnimatedFraction());
         if (mCurViewLengthInAnim <= mViewRect.height()) {
           mCurViewLengthInAnim = mViewRect.height();
-          mShrinkAnim.cancel();
+          mPinchAnim.cancel();
         }
         invalidate();
       }
@@ -314,7 +314,7 @@ public class SubmitView extends View {
   public void submit() {
     cancelAllAnim();
     mStatus = Status.START;
-    mShrinkAnim.start();
+    mPinchAnim.start();
     this.setClickable(false);
   }
 
@@ -343,7 +343,7 @@ public class SubmitView extends View {
 
   private void cancelAllAnim() {
     mCompletedAnim.cancel();
-    mShrinkAnim.cancel();
+    mPinchAnim.cancel();
     mPrepareRotateAnim.cancel();
   }
 
@@ -386,7 +386,7 @@ public class SubmitView extends View {
   /**
    * 状态枚举
    */
-  public enum Status {
+  private enum Status {
     /** 未开始，正常 */
     NORMAL,
     /** 开始，收缩 */
