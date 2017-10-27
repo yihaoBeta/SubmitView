@@ -330,16 +330,13 @@ public class SubmitView extends View {
   /**
    * 恢复初始状态
    */
-  public void cancel() {
+  public void reset() {
     mStatus = Status.NORMAL;
     this.setClickable(true);
-    reset();
+    cancelAllAnim();
     invalidate();
   }
 
-  private void reset() {
-    cancelAllAnim();
-  }
 
   private void cancelAllAnim() {
     mCompletedAnim.cancel();
