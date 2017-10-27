@@ -15,7 +15,6 @@ import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.animation.AccelerateInterpolator;
-import android.view.animation.LinearInterpolator;
 import com.zxs.yihaobeta.submitview.R;
 import org.jetbrains.annotations.NotNull;
 
@@ -118,7 +117,7 @@ public class SubmitWithProgressView extends View {
 
     //初始化由按钮向进度条变化的动画
     mChangeToProgressBarAnim = ValueAnimator.ofFloat(1, 0);
-    mChangeToProgressBarAnim.setInterpolator(new LinearInterpolator());
+    mChangeToProgressBarAnim.setInterpolator(new AccelerateInterpolator());
     mChangeToProgressBarAnim.setDuration(CHANGE_TO_PROGRESSBAR_ANIM_DURATION);
     mChangeToProgressBarAnim.addListener(new AnimatorListenerAdapter() {
       @Override

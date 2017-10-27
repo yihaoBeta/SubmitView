@@ -1,31 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="25dp"
     tools:context="com.zxs.yihaobeta.submitview.MainActivity"
     >
 
-  <com.zxs.yihaobeta.submitview.view.SubmitView
+  <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:textColor="#0636af"
+      android:text="自定义的SubmitView，有带进度显示和不带进度显示两种样式，可用于表单提交，处理短时耗时操作的显示等,可自定义各种颜色，字体，字体大小等属性"
+      android:textSize="15sp"
+      />
 
+
+  <TextView
+      android:paddingTop="20dp"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:textColor="@color/colorAccent"
+      android:textSize="15sp"
+      android:text="不支持进度的SubmitView，自由控制加载时间"
+      />
+  <com.zxs.yihaobeta.submitview.view.SubmitView
+      android:layout_gravity="center_horizontal"
       android:id="@+id/submitView"
-      android:padding="10dp"
+      android:padding="20dp"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       />
-  <Button
+
+  <TextView
+
+      android:paddingTop="30dp"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:text="Start"
-      android:id="@+id/btn_start"
+      android:textSize="15sp"
+      android:textColor="@color/colorAccent"
+      android:text="支持进度显示的SubmitWithProgressView"
       />
-  <Button
+  <com.zxs.yihaobeta.submitview.view.SubmitWithProgressView
+      android:layout_gravity="center_horizontal"
+      android:padding="20dp"
+      android:id="@+id/submitWithProgressView"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:text="END"
-      android:id="@+id/btn_end"
       />
 </LinearLayout>
