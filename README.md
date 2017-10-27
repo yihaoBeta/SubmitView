@@ -4,7 +4,7 @@
 * 不带进度的SubmitView
 * 带进度的SubmitWithProgressView
 ---
-
+### **gif演示图**
 ![](https://github.com/yihaoBeta/SubmitView/blob/master/screenshot/screenshot.gif)
 
 ---
